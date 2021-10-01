@@ -24,6 +24,7 @@ set hidden
 nnoremap <C-n> :bnext<cr>
 nnoremap <C-p> :bprev<cr>
 nnoremap <leader>c :close<cr>
+nnoremap <leader>d :bd<cr>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -50,7 +51,7 @@ set incsearch
 set hlsearch
 
 " helpers
-nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " vimdiff
