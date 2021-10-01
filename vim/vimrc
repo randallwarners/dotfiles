@@ -59,3 +59,6 @@ hi DiffAdd      ctermfg=NONE          ctermbg=DarkGreen
 hi DiffChange   ctermfg=NONE          ctermbg=NONE
 hi DiffDelete   ctermfg=LightBlue     ctermbg=Red
 hi DiffText     ctermfg=Yellow        ctermbg=Red
+
+" plugins
+let g:vimwiki_list=[{'path': $VIMWIKI_PATH, 'syntax': 'markdown', 'ext': '.md'}]
