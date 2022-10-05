@@ -1,0 +1,13 @@
+[pull]
+  ff = only
+[alias]
+  adog = log --all --decorate --oneline --graph
+  c = commit
+  s = status --short
+  st = status
+  d = diff
+  ds = diff --staged
+  a = add
+  l = log
+[user]
+  name = Randall Warners
