@@ -27,3 +27,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 export PS1='${debian_chroot:+($debian_chroot)}[\W]\$ '
+
+if [ -f ~/.bashrclocal ]; then
+    source ~/.bashrclocal
+fi
