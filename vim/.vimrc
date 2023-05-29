@@ -62,3 +62,9 @@ hi DiffText     ctermfg=Yellow        ctermbg=Red
 
 " plugins
 let g:vimwiki_list=[{'path': $VIMWIKI_PATH, 'syntax': 'markdown', 'ext': '.md'}]
+
+if !empty($VIMWIKI_PATH)
+  let g:vimwiki_list=[{'path': $VIMWIKI_PATH, 'syntax': 'markdown', 'ext': '.md'}]
+else
+  let g:vimwiki_list=[{'syntax': 'markdown', 'ext': '.md'}]
+endif
