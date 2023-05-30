@@ -17,6 +17,11 @@ alias tp='trash-put'
 export EDITOR='vim'
 export NNN_TRASH=1 # trash-cli
 
+mcd () {
+  mkdir "$@"
+  cd "${@: -1}"
+}
+
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
