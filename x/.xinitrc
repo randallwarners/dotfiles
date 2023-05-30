@@ -4,5 +4,7 @@
 xbindkeys &
 setxkbmap -option ctrl:nocaps &
 xset r rate 200 30 &
+xset s noblank
+xset s off
 command -v status &> /dev/null && status &
 exec dwm
