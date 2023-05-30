@@ -1,0 +1,35 @@
+#!/bin/bash
+
+get_batt () {
+  BAT_DIR=/sys/class/power_supply/
+  [[ -d "$BAT_DIR" ]] || return
+  BAT_NAME=$(find "$BAT_DIR" -name "BAT*" -printf "%f")
+  [[ -n "$BAT_NAME" ]] || return
+  BAT_PCT=$(cat "$BAT_DIR/$BAT_NAME/capacity")
+  BAT_STATUS=$(\
+    sed -e 's/Charging/+/' \
+    -e 's/Discharging/-/' \
+    -e 's/Full//' \
+    -e 's/Unknown//' \
+    "$BAT_DIR/$BAT_NAME/status"\
+  )
+  echo -n "$BAT_PCT$BAT_STATUS"
+}
+
+concat () {
+  SPACER=""
+  for arg in "$@"; do
+    if [[ -n "$arg" ]]; then
+      echo -n "$SPACER$arg"
+      SPACER=" "
+    fi
+  done
+}
+
+while :; do
+  ESSID=$(iwgetid -r)
+  BATT=$(get_batt)
+  DATE=$(date +"%A %H:%M")
+  xsetroot -name "$(concat $ESSID $BATT $DATE)"
+  sleep 1
+done
