@@ -9,6 +9,7 @@ get_batt () {
   BAT_STATUS=$(\
     sed -e 's/Charging/+/' \
     -e 's/Discharging/-/' \
+    -e 's/Not charging/=/' \
     -e 's/Full//' \
     -e 's/Unknown//' \
     "$BAT_DIR/$BAT_NAME/status"\
