@@ -14,6 +14,7 @@ alias la='ls -lhA'
 alias tp='trash-put'
 
 export EDITOR='vim'
+export NNN_OPTS="u"
 export NNN_TRASH=1 # trash-cli
 
 mcd () {
