@@ -30,7 +30,7 @@ concat () {
 while :; do
   ESSID=$(iwgetid -r)
   BATT=$(get_batt)
-  DATE=$(date +"%A %H:%M")
+  DATE=$(date +"%A %H:%M %Y-%m-%d")
   xsetroot -name "$(concat $ESSID $BATT $DATE)"
   sleep 1
 done
