@@ -81,6 +81,10 @@
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   XF86AudioMicMute
 
+# Screenshot
+"screenshot"
+  Print
+
 ##################################
 # End of xbindkeys configuration #
 ##################################

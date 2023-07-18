@@ -1,0 +1,5 @@
+#!/bin/bash
+TMP_FILE=$(mktemp)
+import png:"$TMP_FILE"
+NAME=$(dmenu -p "File Name:" <&-)
+mv --backup=numbered "$TMP_FILE" "$HOME/Downloads/$NAME"
