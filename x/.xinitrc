@@ -1,6 +1,7 @@
 [ -f ~/.xprofile ] && ~/.xprofile
 [ -f ~/.Xresources ] && xrdb -merge -I$HOME ~/.Xresources
 [ -f ~/.background ] && feh --bg-scale --no-xinerama ~/.background &
+[ -f /usr/bin/dunst ] && /usr/bin/dunst &
 xbindkeys &
 setxkbmap -option ctrl:nocaps &
 xset r rate 200 30 &
