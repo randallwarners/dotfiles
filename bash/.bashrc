@@ -12,6 +12,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -lhA'
 alias tp='trash-put'
+alias rc='rclone'
 
 export EDITOR='vim'
 export NNN_OPTS="u"
