@@ -18,6 +18,14 @@ export EDITOR='vim'
 export NNN_OPTS="u"
 export NNN_TRASH=1 # trash-cli
 
+pd() {
+  if [[ -n "$1" ]]; then
+    pushd "$@"
+  else
+    popd
+  fi
+}
+
 mcd () {
   mkdir "$@"
   cd "${@: -1}"
