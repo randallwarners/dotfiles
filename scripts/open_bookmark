@@ -1,0 +1,5 @@
+#!/bin/bash
+FILE="${1:-$HOME/.bookmarks}"
+CHOICE=$(awk -F, '{ print $1 }' "$FILE" | dmenu -i -l 5)
+URL=$(awk -F, -v "choice=$CHOICE" '$1==choice { print $2 }' "$FILE")
+xdg-open "$URL" &
