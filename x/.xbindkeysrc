@@ -17,3 +17,9 @@
 
 "screenshot"
   Print
+
+"open_bookmark"
+  Mod4 + g
+
+"slock"
+  Mod4 + x
