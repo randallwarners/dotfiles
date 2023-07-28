@@ -7,7 +7,9 @@ BAT_DIR=/sys/class/power_supply/
 BAT_NAME=$(find "$BAT_DIR" -name "BAT*" -printf "%f")
 [[ -n "$BAT_NAME" ]] || exit
 BAT_PCT=$(cat "$BAT_DIR/$BAT_NAME/capacity")
+BAT_STATUS=$(cat "$BAT_DIR/$BAT_NAME/status")
 
+[[ $BAT_STATUS = "Charging" ]] && exit
 if [[ $BAT_PCT -le 5 ]]; then
   notify-send -u critical 'Battery Low' "$BAT_PCT% remaining"
 elif [[ $BAT_PCT -le 10 ]]; then
