@@ -48,7 +48,7 @@ map <leader>s? z=
 
 " search
 set incsearch
-set hlsearch
+set nohlsearch
 
 " helpers
 nnoremap <leader>ev :e $MYVIMRC<cr>
