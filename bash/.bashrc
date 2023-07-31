@@ -71,7 +71,12 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-export PS1='${debian_chroot:+($debian_chroot)}[\W]\$ '
+
+if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
+  PS1='${debian_chroot:+($debian_chroot)}[\W]$(__git_ps1 " (%s)")\$ '
+else
+  PS1='${debian_chroot:+($debian_chroot)}[\W]\$ '
+fi
 
 if [ -f ~/.bashrclocal ]; then
     source ~/.bashrclocal
