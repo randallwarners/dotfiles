@@ -23,6 +23,9 @@ set scrolloff=3
 set hidden
 nnoremap <C-n> :bnext<cr>
 nnoremap <C-p> :bprev<cr>
+nnoremap <leader>tn :tabnext<cr>
+nnoremap <leader>tp :tabprevious<cr>
+nnoremap <leader>tc :tabclose<cr>
 nnoremap <leader>c :close<cr>
 nnoremap <leader>d :bd<cr>
 nnoremap <C-j> <C-w>j
