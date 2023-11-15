@@ -1,5 +1,38 @@
 #!/bin/bash
-TMP_FILE=$(mktemp)
-import png:"$TMP_FILE"
-NAME=$(dmenu -p "File Name:" <&-)
-mv --backup=numbered "$TMP_FILE" "$HOME/Downloads/$NAME"
+
+output_type="clipboard"
+
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    -o|--output)
+      if [ -n "$2" ]; then
+        output_type="$2"
+        shift
+      else
+        echo "Error: $1 option requires an argument (clipboard or file)" >&2
+        exit 1
+      fi
+      ;;
+    *)
+      echo "Error: Unknown option $1" >&2
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+case $output_type in
+  clipboard)
+    import png:- | xclip -sel clip -t image/png
+    ;;
+  file)
+    tmp_file=$(mktemp)
+    import png:"$tmp_file"
+    file_name=$(dmenu -p "File Name:" <&-)
+    mv --backup=numbered "$tmp_file" "$HOME/Downloads/$file_name"
+    ;;
+  *)
+    echo "Error: Invalid output type '$output_type'. Valid options are 'clipboard' or 'file'." >&2
+    exit 1
+    ;;
+esac
