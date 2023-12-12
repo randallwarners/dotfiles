@@ -26,3 +26,6 @@
 
 "slock"
   Mod4 + x
+
+"xmouseless"
+  Mod4 + semicolon
