@@ -10,9 +10,8 @@ static const unsigned int default_speed = 500;
 static SpeedBinding speed_bindings[] = {
     /* key             speed */
     { XK_Super_L,      3000 },
-    { XK_Alt_L,        1500 },
+    { XK_Control_L,    1500 },
     { XK_a,            100  },
-    { XK_Control_L,    10   },
 };
 
 /* moves the mouse pointer
@@ -39,12 +38,10 @@ static ClickBinding click_bindings[] = {
  * a higher value scrolls faster */
 static ScrollBinding scroll_bindings[] = {
     /* key        x      y */
-    { XK_n,        0 ,    25 },
-    { XK_p,        0 ,   -25 },
-    { XK_plus,     0 ,    80 },
-    { XK_minus,    0 ,   -80 },
-    { XK_h,        25,    0  },
-    { XK_g,       -25,    0  },
+    { XK_n,        0,     25 },
+    { XK_p,        0,    -25 },
+    { XK_w,        25,    0  },
+    { XK_e,       -25,    0  },
 };
 
 /* executes shell commands */
