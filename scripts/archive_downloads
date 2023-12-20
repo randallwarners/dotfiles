@@ -3,4 +3,4 @@
 ARCHIVE="$HOME/Downloads/archive"
 
 mkdir -p "$ARCHIVE"
-find "$HOME/Downloads" -not -path "$ARCHIVE/*" -type f -atime +1 -exec mv --backup=numbered "{}" "$ARCHIVE" \;
+find "$HOME/Downloads" -not -path "$ARCHIVE/*" -type f -atime +0 -exec mv --backup=numbered "{}" "$ARCHIVE" \;
