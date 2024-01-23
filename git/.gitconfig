@@ -3,6 +3,7 @@
 [alias]
   adog = log --all --decorate --oneline --graph
   c = commit
+  ca = commit --amend
   s = status --short
   st = status
   d = diff
