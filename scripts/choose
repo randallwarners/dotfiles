@@ -1,0 +1,6 @@
+#!/bin/bash
+SEARCH_DIR="$1"
+MESSAGE="$2"
+
+OPT=$(find "$SEARCH_DIR" -maxdepth 1 -type f | xargs -I{} basename "{}" | dmenu -i -p "$MESSAGE")
+exec "$SEARCH_DIR/$OPT"
