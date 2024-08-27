@@ -10,8 +10,8 @@ BAT_PCT=$(cat "$BAT_DIR/$BAT_NAME/capacity")
 BAT_STATUS=$(cat "$BAT_DIR/$BAT_NAME/status")
 
 [[ $BAT_STATUS = "Charging" ]] && exit
-if [[ $BAT_PCT -le 5 ]]; then
+if [[ $BAT_PCT -le 10 ]]; then
   notify-send -u critical 'Battery Low' "$BAT_PCT% remaining"
-elif [[ $BAT_PCT -le 10 ]]; then
+elif [[ $BAT_PCT -le 20 ]]; then
   notify-send -u normal 'Battery Low' "$BAT_PCT% remaining"
 fi
